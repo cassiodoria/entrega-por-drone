@@ -2,27 +2,37 @@
 Aplicação Back-end REST API para gerenciar entregas por drone.
 
 
-Utiliza a linguagem "PHP"
-Utiliza banco de dados "MySQL"
-Utiliza o Framework “Lumen”
-Utiliza o ORM "Eloquent"
-Utiliza o controle de versão "GIT"
-Utiliza a conteinerização com "Docker".
+- Utiliza a linguagem "PHP"
+- Utiliza banco de dados "MySQL"
+- Utiliza o Framework “Lumen”
+- Utiliza o ORM "Eloquent"
+- Utiliza o controle de versão "GIT"
+- Utiliza a conteinerização com "Docker".
 
-rotas:
+# Rotas
+
 | GET /drones
+
 | Insert: GET /drones
+
 | Update: PUT /drones/{id}
+
 | Delete: DEL /drones/{id}
+
 | Create: POST /drones/{id}
+
 | Paginate: GET /drones?_page=7&_limit=20
+
 | Sort: GET /drones?_sort=id&_order=asc
+
 | Filter: GET /drones?name=daniel&status=fail
+
 | Filter: GET /drones?id=1&id=2
+
 
 Instruções para executar API ( comando de docker-compose, composer, etc...)
 
-#Modelo Drone
+# Modelo Drone
      
 {
     "id": 1,
