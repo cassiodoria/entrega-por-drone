@@ -45,12 +45,16 @@ Instruções para executar API ( comando de docker-compose, composer, etc...)
     "status": "failed",
     "fly": 94
 }
-PS: Valores definidos para 'status': 'success', 'delayed', 'flying', 'failed', 'offiline' e 'charging';
+
+- PS: Valores definidos para 'status': 'success', 'delayed', 'flying', 'failed', 'offiline' e 'charging';
 
 # Mysql
-> mysql -u root-p
+> mysql -u root-p;
+
 > CREATE USER 'entregapordrone'@'localhost' IDENTIFIED BY 'entregapordronepass';
+
 > GRANT ALL PRIVILEGES ON *.* TO 'entregapordrone'@'localhost';
+
 > CREATE DATABASE entregapordrone;
 
 # Migration
