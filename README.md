@@ -13,19 +13,17 @@ Aplicação Back-end REST API para gerenciar entregas por drone.
 
 | GET /drones
 
-| Insert: GET /drones
+| Create: POST /drones
 
 | Update: PUT /drones/{id}
 
 | Delete: DEL /drones/{id}
 
-| Create: POST /drones/{id}
-
-| Paginate: GET /drones?_page=7&_limit=20
+| Paginate: GET /drones?_page=7&_limit=20 (começa na página 0)
 
 | Sort: GET /drones?_sort=id&_order=asc
 
-| Filter: GET /drones?name=daniel&status=fail
+| Filter: GET /drones?name=daniel&status=failed
 
 | Filter: GET /drones?id=1&id=2
 
