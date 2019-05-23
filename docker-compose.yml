@@ -1,0 +1,47 @@
+version: '3'
+services:
+  nginx:
+    build:
+      dockerfile: ./docker/nginx.dockerfile
+      context: .
+    image: cassiodoria/nginx
+    container_name: nginx
+    ports:
+      - 80:80
+    networks:
+      - entregapordrone-network
+    depends_on:
+      - entregapordrone
+
+  mysqldb:
+    image: mysql:latest
+    ports:
+      - 3306:3306
+    expose:
+      - 3306
+    volumes:
+      - ./docker/mysql/data/:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_USER: root
+      MYSQL_PASSWORD: entregapordronepass
+      MYSQL_DATABASE: entregapordrone
+    networks:
+      - entregapordrone-network
+
+  entregapordrone:
+    build:
+      dockerfile: ./docker/entregapordrone.dockerfile
+      context: .
+    image: cassiodoria/entregapordrone
+    container_name: entregapordrone
+    ports:
+      - 3000:3000
+    networks:
+      - entregapordrone-network
+    depends_on:
+      - mysqldb
+
+networks:
+  entregapordrone-network:
+    driver: bridge
